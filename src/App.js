@@ -1,8 +1,9 @@
 // src/App.js
+
 import React, { useContext } from 'react';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Container } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Container, Badge } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
@@ -25,7 +26,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className="App" >
         <AppBar position="static">
           <Toolbar>
             <IconButton edge="start" color="inherit" onClick={handleMenuOpen}>
@@ -35,8 +36,9 @@ function App() {
             <Typography variant="h6" sx={{ flexGrow: 1 }}>
               Health & Wellbeing App
             </Typography>
-            <IconButton>
-            <NotificationsIcon/>
+            <IconButton color="inherit">
+            <Badge badgeContent={3} color="error"><NotificationsIcon /></Badge>
+            
             </IconButton>
             <IconButton color="inherit" onClick={toggleTheme}>
               {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
@@ -60,7 +62,7 @@ function App() {
           </Toolbar>
         </AppBar>
 
-        <Container sx={{ mt: 4 }}>
+        <Container sx={{ mt: 4 ,}}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
