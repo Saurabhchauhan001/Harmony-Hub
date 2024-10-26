@@ -1,10 +1,13 @@
 body {
   margin: 0;
+  background: linear-gradient(135deg, #1D2B64 0%, #746b6d 100%); /* Change this to your preferred gradient */
+  color: #E0E0E0; 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {

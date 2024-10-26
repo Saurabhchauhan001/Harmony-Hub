@@ -13,8 +13,9 @@
 }
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
- 
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  background-color: #5a9de1b5; 
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -29,10 +30,11 @@ body {
 }
 
 .container {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  background: rgba(169, 202, 255, 0.85);
+  border-radius: 12px;
 }
 
 .card-content {

@@ -4,7 +4,7 @@ import { Grid, Card, CardContent, Typography, Box } from '@mui/material';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import LocalDrinkIcon from '@mui/icons-material/LocalDrink';
 import BedtimeIcon from '@mui/icons-material/Bedtime';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie ,Cell,Legend, BarChart, Bar} from 'recharts';
 
 // Sample data for graph
 const data = [
@@ -16,6 +16,17 @@ const data = [
   { day: 'Sat', steps: 4000 },
   { day: 'Sun', steps: 8000 },
 ];
+//sample for slepp cycle
+const sleepData = [
+  { day: 'Mon', sleep: 7 },
+  { day: 'Tue', sleep: 6 },
+  { day: 'Wed', sleep: 8 },
+  { day: 'Thu', sleep: 9 },
+  { day: 'Fri', sleep: 5 },
+  { day: 'Sat', sleep: 7},
+  { day: 'Sun', sleep: 9 },
+];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28',"red","green","yellow","gray"];
 
 function Dashboard() {
   return (
@@ -75,6 +86,50 @@ function Dashboard() {
             <Tooltip />
             <Line type="monotone" dataKey="steps" stroke="#4caf50" strokeWidth={2} />
           </LineChart>
+        </ResponsiveContainer>
+      </Box>
+      <Box sx={{margin:"0"}}>
+        <Typography variant='h5'>Sleep Cycle Over Week using pie chart</Typography>
+        <ResponsiveContainer width="100%" height={250} >
+        <PieChart width={200} height={100} >
+  <Pie
+    data={sleepData}
+    cx={300}
+    cy={100}
+    outerRadius={80}
+    fill="#8884d8"
+    dataKey="sleep"
+    nameKey="day"
+    label={({ day, sleep }) => `${day} (${sleep})`}
+  >
+    {sleepData.map((entry, index) => (
+      <Cell key={`cell-${index}`} fill={COLORS[index]} />
+    ))}
+  </Pie>
+  <Tooltip />
+  <Legend />
+</PieChart>
+      </ResponsiveContainer>
+
+        {/* adding bar chart alternative */}
+        <Typography variant='h5' sx={{margin:"20px"}}> Sleep Bar Chart</Typography>
+      <ResponsiveContainer width="100%" height={250} >
+          <BarChart 
+          width={200}
+          height={300}
+          data={data}
+          
+          >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="day"/>
+          <YAxis/>
+          <Tooltip />
+           <Legend />
+            <Bar data={sleepData} dataKey="sleep" fill="#8884d8"
+
+            />
+
+          </BarChart>
         </ResponsiveContainer>
       </Box>
     </Box>
