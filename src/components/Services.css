@@ -1,0 +1,27 @@
+.services-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .services {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .service {
+    background: #effcf7;
+    color: black;
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .service img {
+    width: 100px;
+    height: 100px;
+  }
+  

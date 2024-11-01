@@ -6,6 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import Activity from './components/Activity';
+import Services from './components/Services';
 
 function App() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -47,6 +48,9 @@ function App() {
               <MenuItem onClick={handleMenuClose} component={Link} to="/activity">
                 Activity
               </MenuItem>
+              <MenuItem onClick={handleMenuClose} component={Link} to="/services">
+               Services
+              </MenuItem>
             </Menu>
           </Toolbar>
         </AppBar>
@@ -56,6 +60,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/activity" element={<Activity />} />
+            <Route path="/services" element={<Services/>} />
           </Routes>
         </Container>
       </div>
